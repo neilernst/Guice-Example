@@ -35,7 +35,11 @@ public class Application implements FXQuoteListener
 	
 	public void start()
 	{
-		quoteProvider.subscribe(currencyPair, this);
+		try {
+			quoteProvider.subscribe(currencyPair, this);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override

@@ -42,8 +42,12 @@ public class FXQuoteProviderTest
 	public void itSchedulesAnUpdateTaskWhenISubscribe()
 	{
 		// When
-		provider.subscribe(CURRENCY_PAIR, listener);
-		
+		try {
+			provider.subscribe(CURRENCY_PAIR, listener);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 		// Then
 		verify(scheduledExecutor).scheduleAtFixedRate(any(Runnable.class), eq(0l), eq(1l), eq(TimeUnit.SECONDS));
 	}
@@ -54,8 +58,12 @@ public class FXQuoteProviderTest
 		// Given
 		when(quoteService.getMidPrice(CURRENCY_PAIR)).thenReturn(1.5d);
 		ArgumentCaptor<Runnable> argument = ArgumentCaptor.forClass(Runnable.class);
-		provider.subscribe(CURRENCY_PAIR, listener);
-		
+		try {
+			provider.subscribe(CURRENCY_PAIR, listener);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
 		// When
 		verify(scheduledExecutor).scheduleAtFixedRate(argument.capture(), eq(0l), eq(1l), eq(TimeUnit.SECONDS));
 		argument.getValue().run();
