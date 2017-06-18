@@ -10,6 +10,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.guiceexample.injection.MyModule;
 import com.guiceexample.util.AuditLogger;
+import com.guiceexample.injection.Grapher;
 
 @Singleton
 public class Application implements FXQuoteListener
@@ -35,6 +36,7 @@ public class Application implements FXQuoteListener
 	
 	public void start()
 	{
+		Grapher g = new Grapher();
 		try {
 			quoteProvider.subscribe(currencyPair, this);
 		} catch (InterruptedException e) {
