@@ -1,0 +1,14 @@
+digraph injector {
+graph [rankdir=TB];
+x2 [margin="0.02,0", shape=box, style=solid, label=<<table cellspacing="0" cellpadding="5" cellborder="0" border="0"><tr><td align="left" port="header" bgcolor="#000000"><font color="#ffffff">AuditLogger<br align="left"/></font></td></tr><tr><td align="left" port="m_6b3a1173">&lt;init&gt;</td></tr></table>>]
+x3 [margin="0.02,0", shape=box, style=dashed, label=<<table cellspacing="0" cellpadding="5" cellborder="0" border="0"><tr><td align="left" port="header" bgcolor="#ffffff"><font color="#000000">String<br align="left"/></font></td></tr></table>>]
+x0 [margin="0.02,0", shape=box, style=dashed, label=<<table cellspacing="0" cellpadding="5" cellborder="0" border="0"><tr><td align="left" port="header" bgcolor="#ffffff"><font color="#000000">QuoteService<br align="left"/></font></td></tr></table>>]
+x1 [margin="0.02,0", shape=box, style=solid, label=<<table cellspacing="0" cellpadding="5" cellborder="0" border="0"><tr><td align="left" port="header" bgcolor="#aaaaaa"><font color="#ffffff" point-size="10">MyModule.java:40<br align="left"/></font><font color="#ffffff">#provideQuoteService(AuditLogger)<br align="left"/></font></td></tr><tr><td align="left" port="m_bf4b0c19">#provideQuoteService(...)</td></tr></table>>]
+x4 [margin="0.02,0", shape=box, style=solid, label=<<table cellspacing="0" cellpadding="5" cellborder="0" border="0"><tr><td align="left" port="header" bgcolor="#aaaaaa"><font color="#ffffff" point-size="10">MyModule.java:32<br align="left"/></font><font color="#ffffff">"USDCAD"<br align="left"/></font></td></tr></table>>]
+x6 [margin="0.02,0", shape=box, style=solid, label=<<table cellspacing="0" cellpadding="5" cellborder="0" border="0"><tr><td align="left" port="header" bgcolor="#aaaaaa"><font color="#ffffff" point-size="10">MyModule.java:33<br align="left"/></font><font color="#ffffff">Executors$DelegatedScheduledExecutorService<br align="left"/></font></td></tr></table>>]
+x5 [margin="0.02,0", shape=box, style=dashed, label=<<table cellspacing="0" cellpadding="5" cellborder="0" border="0"><tr><td align="left" port="header" bgcolor="#ffffff"><font color="#000000">ScheduledExecutorService<br align="left"/></font></td></tr></table>>]
+x0 -> x1 [style=dashed, arrowhead=onormalonormal, arrowtail=none]
+x1:m_bf4b0c19:e -> x2 [style=solid, arrowhead=normal, arrowtail=none]
+x3 -> x4 [style=dashed, arrowhead=onormal, arrowtail=none]
+x5 -> x6 [style=dashed, arrowhead=onormal, arrowtail=none]
+}
